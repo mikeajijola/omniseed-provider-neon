@@ -1,0 +1,16 @@
+{
+  "manifestVersion": "1.0",
+  "id": "neon",
+  "organisation": "Neon",
+  "version": "0.1.0-alpha.1",
+  "engineCompatibility": "omniseed.provider.protocol/1.0",
+  "primitiveFamilies": ["memory"],
+  "implementations": [
+    { "family": "memory", "products": ["PostgreSQL", "Projects", "Branches", "Compute"] }
+  ],
+  "operations": ["runtime.state.status", "runtime.state.evidence"],
+  "configurationSchema": "./provider-configuration.schema.json",
+  "observationTypes": ["neon_runtime_state"],
+  "evidenceTypes": ["neon_project_observation"],
+  "permissions": ["neon.project.read", "neon.project.create"]
+}

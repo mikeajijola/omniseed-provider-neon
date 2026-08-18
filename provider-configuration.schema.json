@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omniseed.org/providers/neon/configuration-v1.json",
+  "title": "Neon Provider process configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["projectName"],
+  "properties": {
+    "projectName": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "projectId": { "type": "string", "pattern": "^[a-z0-9-]{1,60}$" },
+    "organisationId": { "type": "string", "minLength": 1 },
+    "regionId": { "type": "string", "minLength": 1 },
+    "postgresVersion": { "type": "integer", "minimum": 14, "maximum": 18 },
+    "apiKeyEnvironment": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$", "default": "NEON_API_KEY" },
+    "apiBaseUrl": { "type": "string", "format": "uri", "default": "https://console.neon.tech/api/v2" }
+  }
+}
